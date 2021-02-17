@@ -1,11 +1,11 @@
 /*
  * Greedy algoritma
  * 
- * Amaç: Kullanýcýnýn memnuniyet seviyesini max tutmak
+ * Amaï¿½: Kullanï¿½cï¿½nï¿½n memnuniyet seviyesini max tutmak
  *
- * Mustafa Hatipoðlu
+ * Mustafa Hatipoï¿½lu
  * 
- * NOT: Türkçe karakterlerde sorun çýkarsa kodlamayý wýndows-1254 yapmalýsýnýz
+ * NOT: Tï¿½rkï¿½e karakterlerde sorun ï¿½ï¿½karsa kodlamayï¿½ wï¿½ndows-1254 yapmalï¿½sï¿½nï¿½z
  */
 
 
@@ -16,146 +16,146 @@
 
 int main()
 {
-	setlocale(LC_ALL,"Turkish"); //Turkce karakterlerin duzgun goruntulenmesi icin
-	srand(time(NULL));  //Bilgisayarin saatine gore rastgele bir sayi uretilecek
-	
-	
-	int memnuniyet; 
-	int icerikzamani;
-    float icerikler[10][5]; //Ýçeriklerle ilgili bilgiler bu dizide tutulur 
+    setlocale(LC_ALL,"Turkish"); //Turkce karakterlerin duzgun goruntulenmesi icin
+    srand(time(NULL));  //Bilgisayarin saatine gore rastgele bir sayi uretilecek
+    
+    
+    int memnuniyet; 
+    int icerikzamani;
+    float icerikler[10][5]; //ï¿½ï¿½eriklerle ilgili bilgiler bu dizide tutulur 
 
-	
-	//Ýçerik atamalarý burada yapýlýr
-	//1. sütun süreyi
-	//2. sütun memnuniyeti tutar
-	//3. sütun kullanýcýya verilen içeriðin tekrar verilmemesi için bu sütünda 0 ve 1 ler tutulur, '0' ---> boþ '1' ---> verildi anlamýna gelir
-	//4. sütunda hýrsýzýn çantasýndaki prensipten yola çýkýlarak memnuniyet süreye bölünür hangisinin deðeri en yüksekse o deðer kullanýcýya verilir 
-	//5. sütun içeriðin sýrasýný tutar
-	
-	for(int i=0;i<10;i++){
-		      
-		     for(int j=0;j<1;){  //20 ile 60 arasýnda bir sure atanýlmadýgý surece donguye girecek
-	              icerikzamani = rand()%61; //0-60 arasýnda atama yapar
-				 
-				  if(icerikzamani>19){  //eger atanan sayi 20 ve üzeri ise atama yapýlýr
-					  icerikler[i][j]=icerikzamani;
-					  j++;	
-								     }
-	                        }
-					  
-			 for(int l=0;l<1;){  //0 ile 10 arasýnda bir memnuniyet atanmadýgý surece donguye girecek
-				  memnuniyet = rand()%11; //0-10 arasýnda atama yapar
-				 
-				  if(memnuniyet>0){  //eger atanan sayý 0'dan buyukse atama yapar   
-					icerikler[i][l+1]=memnuniyet;	          
-				    l++;       
-				                        }
-							     }		 
-						 
-		     for(int c=0;c<1;c++){ //icerikler ilk basta kullanýcýya verilmedigi icin hepsine '0' atýyoruz
-				
-				icerikler[i][c+2]=0;
-				              
-				               }			 
-					
-			 for(int b=0;b<1;b++){ //birim zamana dusen memnuniyet oranýný bulmak icin bölme islemi yapýlýr ve atanýr
-				 icerikler[i][b+3]=icerikler[i][b+1]/icerikler[i][b];		 		 
-				                 }		
-			 for(int v=0;v<1;v++)  //Ýçerikler numaralandýrýlýr		
-			     icerikler[i][v+4]=i+1;		  
-					  }	 
-		
-		
-	printf("***********************************************************************\n");	
-	printf("*                                                                     *\n");
-	printf("*\t|\\    |   ------   -------   |-----   |       |   \\    /      *\n");	
-	printf("*\t| \\   |   |           |      |        |       |    \\  /       *\n");	
-	printf("*\t|  \\  |   |-----      |      |-----   |       |     \\/        *\n");	
-	printf("*\t|   \\ |   |           |      |        |       |     /\\        *\n");
-	printf("*\t|    \\|   |-----      |      |        |____   |    /  \\       *\n");	
-	printf("*                                                                     *\n");
-	printf("*                                                                     *\n");
-	printf("***********************************************************************");	
-		
-		
-		
-				 
-				 
-	
-	for(int k=0;k<10;k++){
-		for(int x=0;x<1;x++){  //Burada bütün içerikler listelenir
-		    printf("\n\t\tÝçerik%.0f ",icerikler[k][x+4]); 
-		    printf(" Süre:%.0fdk ",icerikler[k][x]);        
-		    printf(" Memnuniyet:%.0f\n ",icerikler[k][x+1]);                   
-		               }
-	
-		}	
-	
-	
-	
-	float toplamsure=0;
-	float max=icerikler[0][3];  //Kullanýcýya verilecek içerikler memnuniyet/sure oraný en yuksek olan verileceginden önce max deger belirlenir
-	int q=0;
-	printf("\n************************************************\n\n");
-	printf("\nSize özel öneriler...\n");
-	
-	while(q<1){
-     	 
-     	  for(int arama=0;arama<10;arama++){
-			  
-			  if(icerikler[arama][3]>max){
-				 
-				 if(icerikler[arama][2]!=1){  //eger icerik önceden kullaniciya verilmisse tekrardan ekrana bastirilmaz
-					
-					 max=icerikler[arama][3]; 	 			 	 			
-											}
-				 
-						                      }
-			         
-			                              }
-		 
-		 for(int m=0;m<10;m++){
-			 
-			 if(max==icerikler[m][3]){  //atanan max deger dizide tekrar aranýr ve bulundugu satýr ekrana bastýrýlýr
-				icerikler[m][2]=1;
-				toplamsure+=icerikler[m][0]; //sureler ilk sutunda tutuldugundan toplam sureye eklenir
-				
-				if(toplamsure<=180){  //Toplam sure 180 dk dan kucukse ekrana bastýrýlýr
-				   
-				   printf("\n\tÝçerik%.0f ",icerikler[m][4]); //Once icerik numarasi bastýrýlýr
-		           printf(" Süre:%.0fdk ",icerikler[m][0]);    //Sure ekrana bastirilir      
-		           printf(" Memnuniyet:%.0f\n",icerikler[m][1]);   //ve son olarak memnuniyet suresi ekrana bastýrýlýr                                   
-								}                
-			  else     //Toplam sure 180 'i gectiginde q bir artýrýlýr ve döngüden cikilir          
-			       q++;                 
-			                          }
-				              }	 
-			
-			 
-		
-		
-		max=0; //Kullanýcýya her icerik verildikten sonra max deger sýfýrlanýr karsýlastýrmada problem olmamasi icin
-		
-		
-		}
-	
-	
-	
-	//Eger dizinin son halini gormek isterseniz yorum ayraclarini kaldirabilirsiniz
-	
-	/*for(int k=0;k<10;k++){
-		for(int x=0;x<1;x++){
-		    printf("Sure: %.0f",icerikler[k][x]); 
-		    printf(" Memnuniyet: %.0f",icerikler[k][x+1]);        
-		    printf(" atama: %.0f ",icerikler[k][x+2]);          
-		    printf("Deger: %f",icerikler[k][x+3]);
-		    printf(" Sira:%.0f\n",icerikler[k][x+4]);          
-		               }
-	
-		}	*/
-	
-	
-	
-	return 0;
+    
+    //ï¿½ï¿½erik atamalarï¿½ burada yapï¿½lï¿½r
+    //1. sï¿½tun sï¿½reyi
+    //2. sï¿½tun memnuniyeti tutar
+    //3. sï¿½tun kullanï¿½cï¿½ya verilen iï¿½eriï¿½in tekrar verilmemesi iï¿½in bu sï¿½tï¿½nda 0 ve 1 ler tutulur, '0' ---> boï¿½ '1' ---> verildi anlamï¿½na gelir
+    //4. sï¿½tunda hï¿½rsï¿½zï¿½n ï¿½antasï¿½ndaki prensipten yola ï¿½ï¿½kï¿½larak memnuniyet sï¿½reye bï¿½lï¿½nï¿½r hangisinin deï¿½eri en yï¿½ksekse o deï¿½er kullanï¿½cï¿½ya verilir 
+    //5. sï¿½tun iï¿½eriï¿½in sï¿½rasï¿½nï¿½ tutar
+    
+    for(int i=0;i<10;i++){
+              
+             for(int j=0;j<1;){  //20 ile 60 arasï¿½nda bir sure atanï¿½lmadï¿½gï¿½ surece donguye girecek
+                  icerikzamani = rand()%61; //0-60 arasï¿½nda atama yapar
+                 
+                  if(icerikzamani>19){  //eger atanan sayi 20 ve ï¿½zeri ise atama yapï¿½lï¿½r
+                      icerikler[i][j]=icerikzamani;
+                      j++;	
+                                     }
+                            }
+                      
+             for(int l=0;l<1;){  //0 ile 10 arasï¿½nda bir memnuniyet atanmadï¿½gï¿½ surece donguye girecek
+                  memnuniyet = rand()%11; //0-10 arasï¿½nda atama yapar
+                 
+                  if(memnuniyet>0){  //eger atanan sayï¿½ 0'dan buyukse atama yapar   
+                    icerikler[i][l+1]=memnuniyet;	          
+                    l++;       
+                                        }
+                                 }		 
+                         
+             for(int c=0;c<1;c++){ //icerikler ilk basta kullanï¿½cï¿½ya verilmedigi icin hepsine '0' atï¿½yoruz
+                
+                icerikler[i][c+2]=0;
+                              
+                               }			 
+                    
+             for(int b=0;b<1;b++){ //birim zamana dusen memnuniyet oranï¿½nï¿½ bulmak icin bï¿½lme islemi yapï¿½lï¿½r ve atanï¿½r
+                 icerikler[i][b+3]=icerikler[i][b+1]/icerikler[i][b];		 		 
+                                 }		
+             for(int v=0;v<1;v++)  //ï¿½ï¿½erikler numaralandï¿½rï¿½lï¿½r		
+                 icerikler[i][v+4]=i+1;		  
+                      }	 
+        
+        
+    printf("***********************************************************************\n");	
+    printf("*                                                                     *\n");
+    printf("*\t|\\    |   ------   -------   |-----   |       |   \\    /      *\n");	
+    printf("*\t| \\   |   |           |      |        |       |    \\  /       *\n");	
+    printf("*\t|  \\  |   |-----      |      |-----   |       |     \\/        *\n");	
+    printf("*\t|   \\ |   |           |      |        |       |     /\\        *\n");
+    printf("*\t|    \\|   |-----      |      |        |____   |    /  \\       *\n");	
+    printf("*                                                                     *\n");
+    printf("*                                                                     *\n");
+    printf("***********************************************************************");	
+        
+        
+        
+                 
+                 
+    
+    for(int k=0;k<10;k++){
+        for(int x=0;x<1;x++){  //Burada bï¿½tï¿½n iï¿½erikler listelenir
+            printf("\n\t\tï¿½ï¿½erik%.0f ",icerikler[k][x+4]); 
+            printf(" Sï¿½re:%.0fdk ",icerikler[k][x]);        
+            printf(" Memnuniyet:%.0f\n ",icerikler[k][x+1]);                   
+                       }
+    
+        }	
+    
+    
+    
+    float toplamsure=0;
+    float max=icerikler[0][3];  //Kullanï¿½cï¿½ya verilecek iï¿½erikler memnuniyet/sure oranï¿½ en yuksek olan verileceginden ï¿½nce max deger belirlenir
+    int q=0;
+    printf("\n************************************************\n\n");
+    printf("\nSize ï¿½zel ï¿½neriler...\n");
+    
+    while(q<1){
+          
+           for(int arama=0;arama<10;arama++){
+              
+              if(icerikler[arama][3]>max){
+                 
+                 if(icerikler[arama][2]!=1){  //eger icerik ï¿½nceden kullaniciya verilmisse tekrardan ekrana bastirilmaz
+                    
+                     max=icerikler[arama][3]; 	 			 	 			
+                                            }
+                 
+                                              }
+                     
+                                          }
+         
+         for(int m=0;m<10;m++){
+             
+             if(max==icerikler[m][3]){  //atanan max deger dizide tekrar aranï¿½r ve bulundugu satï¿½r ekrana bastï¿½rï¿½lï¿½r
+                icerikler[m][2]=1;
+                toplamsure+=icerikler[m][0]; //sureler ilk sutunda tutuldugundan toplam sureye eklenir
+                
+                if(toplamsure<=180){  //Toplam sure 180 dk dan kucukse ekrana bastï¿½rï¿½lï¿½r
+                   
+                   printf("\n\tï¿½ï¿½erik%.0f ",icerikler[m][4]); //Once icerik numarasi bastï¿½rï¿½lï¿½r
+                   printf(" Sï¿½re:%.0fdk ",icerikler[m][0]);    //Sure ekrana bastirilir      
+                   printf(" Memnuniyet:%.0f\n",icerikler[m][1]);   //ve son olarak memnuniyet suresi ekrana bastï¿½rï¿½lï¿½r                                   
+                                }                
+              else     //Toplam sure 180 'i gectiginde q bir artï¿½rï¿½lï¿½r ve dï¿½ngï¿½den cikilir          
+                   q++;                 
+                                      }
+                              }	 
+            
+             
+        
+        
+        max=0; //Kullanï¿½cï¿½ya her icerik verildikten sonra max deger sï¿½fï¿½rlanï¿½r karsï¿½lastï¿½rmada problem olmamasi icin
+        
+        
+        }
+    
+    
+    
+    //Eger dizinin son halini gormek isterseniz yorum ayraclarini kaldirabilirsiniz
+    
+    /*for(int k=0;k<10;k++){
+        for(int x=0;x<1;x++){
+            printf("Sure: %.0f",icerikler[k][x]); 
+            printf(" Memnuniyet: %.0f",icerikler[k][x+1]);        
+            printf(" atama: %.0f ",icerikler[k][x+2]);          
+            printf("Deger: %f",icerikler[k][x+3]);
+            printf(" Sira:%.0f\n",icerikler[k][x+4]);          
+                       }
+    
+        }	*/
+    
+    
+    
+    return 0;
 }
 
