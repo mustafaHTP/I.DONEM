@@ -16,17 +16,13 @@ int main()
 	printf("Lutfen bir sayi giriniz: ");
 	scanf("%d",&sayi);
 	
-	for(b=sayi;b>=1;b--){
-					   
-		   for(c=1;c<=b;c++)			   
-			   printf("%d",b);
-		       	   
-		
-		      printf("\n");
-		
-		
-		              }
+	for(b=sayi;b>=1;b--){					   
+		for(c=1;c<=b;c++)			   
+			printf("%d",b);
+		       	   		
+		    printf("\n");
 	
+	}
 	
 	return 0;
 }

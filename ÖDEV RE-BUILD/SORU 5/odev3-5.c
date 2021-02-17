@@ -33,16 +33,13 @@ int main()
    
    
    
-   else if(guess<n){
+        else if(guess<n){
            printf("\nSayidan kucuk bir deger girdiniz");	   
 		   printf("\nLutfen tekrar N sayisini tahmin etmek icin 0-100 arasinda bir sayi giriniz: ");
 			       }
 	
 		}while(guess!=n);
-		
-		
-		
-		
+			
 		printf("Tebrikler sayiyi buldunuz...\n");
 		printf("Tekrar oynamak ister misiniz ? [0/1]");
 		scanf(" %c",&devam);
@@ -52,7 +49,7 @@ int main()
 			
 	  
 	       
-							   }while(i==0);
+		}while(i==0);
 	     
 	
 	return 0;

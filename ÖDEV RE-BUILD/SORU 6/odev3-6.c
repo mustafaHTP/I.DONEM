@@ -35,9 +35,7 @@ int main (){
 	scanf("%d",&sayino);
        }while(!(sayino>=1 && sayino <=5));
 	
-	
-	
-	
+
 	printf("\n\nADAM ASMACA OYUNU BASLAMISTIR...\n\n");
 	
 	printf("%c %c %c %c\n",b1,b2,b3,b4);     //o anki durumu ekrana bastiriyoruz
@@ -157,11 +155,9 @@ int main (){
 	              basari++;
 		          harfvar++;                 }
 	        break;
-		
-		   
-		
-	     
+    
 	                                 }  
+
 		if(harfvar==0)   //eğer harf var 0 ise ekrana "Harf yoktur !!" bastirir 
 		   printf("\nHarf yoktur !!\n");
 		
@@ -180,16 +176,6 @@ int main (){
 	     printf("\n.....Tebrikler Basardiniz.......");
 	else
 	     printf("\n.....Tebrikler Kaybettiniz.......");
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	return 0;
