@@ -19,7 +19,7 @@ char temp = *px;
 }
 
 
-	
+    
 
 int main (){
 
@@ -29,9 +29,9 @@ int main (){
         
         swap(&a[0], &a[8]);
         printf("%s",a);
-	
-	
-	
-	return 0;
+    
+    
+    
+    return 0;
 }
 
