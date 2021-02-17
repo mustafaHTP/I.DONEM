@@ -1,66 +1,63 @@
-/* Bu program aðýrlýklý not ortalamasýný hesaplar 
- *Mustafa Hatipoðlu
+/* Bu program aï¿½ï¿½rlï¿½klï¿½ not ortalamasï¿½nï¿½ hesaplar 
+ *Mustafa Hatipoï¿½lu
  */
 
-#include <stdio.h> //standart giriþ-çýkýþ iþlemlerini gerçekleþtiren C kütüphanesidir
+#include <stdio.h> //standart giriï¿½-ï¿½ï¿½kï¿½ï¿½ iï¿½lemlerini gerï¿½ekleï¿½tiren C kï¿½tï¿½phanesidir
 
 
-int main () { //main fonksiyonunu baþlatýr
-	
-	
-	
-	
-	 float Turkce,AKTS1,notT,Matematik,AKTS2,notM,Fizik,AKTS3,notF,Biyoloji,AKTS4,notB,Kimya,AKTS5,notK,Ortalama; //Burada fonksiyonlarda kullanýlacak deðiþkenlerin hafýzada yerini ayýrýyoruz 
+int main () { //main fonksiyonunu baï¿½latï¿½r
 
-	 
-	 printf("Lutfen ders notlarinizi giriniz\n\n\aTurkce Notu: "); //"\n" imleci alt satýra indirir
-	 scanf("%f",&notT); //kullanýcýdan bir sayý alýr ve önceden tanýmlanmýþ olan notT nin yerine yazar
-	 printf("\aTurkce Akts: "); //ekrana "Türkçe Akts:" çýktýsý verir
-	 scanf("%f",&AKTS1);
-	 
-	 Turkce=AKTS1*notT;//"Akts1*notT" yi Turkce'ye atýyoruz
-	 
-	 
-	 
-	 
-	 printf("\n\aMatematik Notu: "); //"\a" ses çýkarýr
-	 scanf("%f",&notM);
-	 printf("\aMatematik Akts: ");
-	 scanf("%f",&AKTS2);
-	 
-	 Matematik=AKTS2*notM;
-	 
-	 
-	 printf("\n\aFizik Notu: ");
-	 scanf("%f",&notF);
-	 printf("\aFizik Akts: ");
-	 scanf("%f",&AKTS3);
-	 
-	 Fizik=AKTS3*notF;
-	 
-	 
-	 
-	 printf("\n\aBiyoloji Notu: ");
-	 scanf("%f",&notB);
-	 printf("\aBiyoloji Akts: ");
-	 scanf("%f",&AKTS4);
-	 
-	 Biyoloji=AKTS4*notB; 
-	 
-	 
-	 printf("\n\aKimya Notu: ");
-	 scanf("%f",&notK);
-	 printf("\aKimya Akts: ");
-	 scanf("%f",&AKTS5);
-	 
-	 Kimya=AKTS5*notK;	 
-	 
-	 
-	 Ortalama=(Turkce+Matematik+Fizik+Biyoloji+Kimya)/(AKTS1+AKTS2+AKTS3+AKTS4+AKTS5); /*burada kullanýcadan alýnan giriþlerin hepsini kullanarak , 
-																						*ortalamayý hesaplayacak ifadeyi önceden hafýzada yerini ayýrdýðýmýz "Ortalama" ya atýyoruz*/
-	 
-	 printf("\n\aOrtalama: %0.2f",Ortalama);//ekrana "Ortalama: " çýktýsýný verir
-	 
-	 return 0;
-	 
+     float Turkce,AKTS1,notT,Matematik,AKTS2,notM,Fizik,AKTS3,notF,Biyoloji,AKTS4,notB,Kimya,AKTS5,notK,Ortalama; //Burada fonksiyonlarda kullanï¿½lacak deï¿½iï¿½kenlerin hafï¿½zada yerini ayï¿½rï¿½yoruz 
+
+     
+     printf("Lutfen ders notlarinizi giriniz\n\n\aTurkce Notu: "); //"\n" imleci alt satï¿½ra indirir
+     scanf("%f",&notT); //kullanï¿½cï¿½dan bir sayï¿½ alï¿½r ve ï¿½nceden tanï¿½mlanmï¿½ï¿½ olan notT nin yerine yazar
+     printf("\aTurkce Akts: "); //ekrana "Tï¿½rkï¿½e Akts:" ï¿½ï¿½ktï¿½sï¿½ verir
+     scanf("%f",&AKTS1);
+     
+     Turkce=AKTS1*notT;//"Akts1*notT" yi Turkce'ye atï¿½yoruz
+     
+     
+     
+     
+     printf("\n\aMatematik Notu: "); //"\a" ses ï¿½ï¿½karï¿½r
+     scanf("%f",&notM);
+     printf("\aMatematik Akts: ");
+     scanf("%f",&AKTS2);
+     
+     Matematik=AKTS2*notM;
+     
+     
+     printf("\n\aFizik Notu: ");
+     scanf("%f",&notF);
+     printf("\aFizik Akts: ");
+     scanf("%f",&AKTS3);
+     
+     Fizik=AKTS3*notF;
+     
+     
+     
+     printf("\n\aBiyoloji Notu: ");
+     scanf("%f",&notB);
+     printf("\aBiyoloji Akts: ");
+     scanf("%f",&AKTS4);
+     
+     Biyoloji=AKTS4*notB; 
+     
+     
+     printf("\n\aKimya Notu: ");
+     scanf("%f",&notK);
+     printf("\aKimya Akts: ");
+     scanf("%f",&AKTS5);
+     
+     Kimya=AKTS5*notK;	 
+     
+     
+     Ortalama=(Turkce+Matematik+Fizik+Biyoloji+Kimya)/(AKTS1+AKTS2+AKTS3+AKTS4+AKTS5); /*burada kullanï¿½cadan alï¿½nan giriï¿½lerin hepsini kullanarak , 
+                                                                                        *ortalamayï¿½ hesaplayacak ifadeyi ï¿½nceden hafï¿½zada yerini ayï¿½rdï¿½ï¿½ï¿½mï¿½z "Ortalama" ya atï¿½yoruz*/
+     
+     printf("\n\aOrtalama: %0.2f",Ortalama);//ekrana "Ortalama: " ï¿½ï¿½ktï¿½sï¿½nï¿½ verir
+     
+     return 0;
+     
  }

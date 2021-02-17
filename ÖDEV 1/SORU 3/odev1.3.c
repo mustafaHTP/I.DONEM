@@ -1,7 +1,7 @@
 /*
- * Bu program kullanýcadan yarýçap ve yükseklik deðerini alarak koninin hacmini hesaplar 
+ * Bu program kullanï¿½cadan yarï¿½ï¿½ap ve yï¿½kseklik deï¿½erini alarak koninin hacmini hesaplar 
  *
- * Mustafa HATÝPOÐLU
+ * Mustafa HATï¿½POï¿½LU
  */
 
 
@@ -9,20 +9,20 @@
 
 
 int main() {
-	
+    
 
-int r,h; //yarýçap ve yükseklik deðiþkenlerini tam sayý olarak hafýzada yer ayýrýyoruz
-float Hacim; //Hacim deðiþkenini ondalýk sayý olarak hafýzada yer ayýrýyoruz
+int r,h; //yarï¿½ï¿½ap ve yï¿½kseklik deï¿½iï¿½kenlerini tam sayï¿½ olarak hafï¿½zada yer ayï¿½rï¿½yoruz
+float Hacim; //Hacim deï¿½iï¿½kenini ondalï¿½k sayï¿½ olarak hafï¿½zada yer ayï¿½rï¿½yoruz
 
 
-printf("Lutfen koninin yaricapinini giriniz: \n\n"); //"\n" escape karakteri imleci bir alt satýra indirir
-scanf("%d",&r); //Kullanýcýdan yarýçap deðerini alýr
+printf("Lutfen koninin yaricapinini giriniz: \n\n"); //"\n" escape karakteri imleci bir alt satï¿½ra indirir
+scanf("%d",&r); //Kullanï¿½cï¿½dan yarï¿½ï¿½ap deï¿½erini alï¿½r
 
 printf("\nLutfen koninin yuksekligini giriniz: \n\n");
 scanf("%d",&h); 
 
-Hacim=(3.14*r*r*h)/3; //Koninin hacmini bulmamýzý saðlayacak formülü "Hacim" deðiþkenine atýyoruz
-printf("\nHacim:  %f\a",Hacim); //Buradaki "\a" ses çýkarýr
+Hacim=(3.14*r*r*h)/3; //Koninin hacmini bulmamï¿½zï¿½ saï¿½layacak formï¿½lï¿½ "Hacim" deï¿½iï¿½kenine atï¿½yoruz
+printf("\nHacim:  %f\a",Hacim); //Buradaki "\a" ses ï¿½ï¿½karï¿½r
 
 return 0;
 
