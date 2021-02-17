@@ -71,22 +71,22 @@ int main()
                 bos[j]=g;
                 fail++;
              
-                             }	
+        }	
         
-                 if(fail==0)	               
-                 printf("\nHarf yoktur...\n");   
-        
-        
-                 fail=0;
+        if(fail==0)	               
+            printf("\nHarf yoktur...\n");   
         
         
-                  for (int s=0;s<uz;s++)
-                       printf("%c",bos[s]);
+        fail=0;
         
-                heart--;
-                life(heart);
+        
+        for (int s=0;s<uz;s++)
+            printf("%c",bos[s]);
+        
+        heart--;
+        life(heart);
 
-                        }
+    }
     
     
     //BASARIYA BURADA BAKIYORUZ
@@ -104,11 +104,6 @@ int main()
     else
        printf("\nBasaramadiniz...... :(");
     
-    
-    
-    
-    
-    
-    return 0;
+return 0;
 }
 
