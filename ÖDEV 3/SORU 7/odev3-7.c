@@ -10,63 +10,49 @@
 
 int main()
 {
-	
-	
-	int a,b,buyuk,kucuk,kalan,qbuyuk,qkucuk;	
-	
-	do{
-	
-	
-	printf("\nLutfen iki adet pozitif tam sayi giriniz: ");
-	scanf("%d%d",&a,&b);
-		
-	
+    
+  int a,b,buyuk,kucuk,kalan,qbuyuk,qkucuk;	
+    
+  do{
+    
+    printf("\nLutfen iki adet pozitif tam sayi giriniz: ");
+    scanf("%d%d",&a,&b);
+
      }while(a<0 || b<0 );
-	
-	     if (a>b)
-	              {
-	            buyuk=a;
-	            kucuk=b;
-	
-                  }
+    
+  if (a>b)
+  {
+    buyuk=a;
+    kucuk=b; 
+  }
 
-   else if (b>a)
-                  {
-	           buyuk=b;
-	           kucuk=a;
-	              }
-
+  else if (b>a)
+  {
+    buyuk=b;
+    kucuk=a;
+  }    
+  
+  qbuyuk=buyuk;
+  qkucuk=kucuk; 
+    
+  kalan=buyuk%kucuk;
+      
+  printf("OBEB(%d,%d)=",buyuk,kucuk);
+    
+  while(kalan!=0){
      
-    qbuyuk=buyuk;
-    qkucuk=kucuk; 
-	
-	kalan=buyuk%kucuk;
-	
-	
-	
-	printf("OBEB(%d,%d)=",buyuk,kucuk);
-	
-	while(kalan!=0){
-		
-		
-		buyuk=kucuk;
-		kucuk=kalan;	
-			
-		kalan=buyuk%kucuk;
-	
-		printf("OBEB(%d,%d)=",buyuk,kucuk);		
+    buyuk=kucuk;
+    kucuk=kalan;	
+         
+    kalan=buyuk%kucuk;   
+    printf("OBEB(%d,%d)=",buyuk,kucuk);   
+     
+  } 
+    
+  printf("OBEB(%d,%d)",kucuk,kalan);
+    
+    
+  printf("\nOBEB(%d,%d): %d ",qbuyuk,qkucuk,kucuk);
 
-		
-		} 
-	
-	   printf("OBEB(%d,%d)",kucuk,kalan);
-	
-	
-	printf("\nOBEB(%d,%d): %d ",qbuyuk,qkucuk,kucuk);
-	
-	
-	
-	
-	
-	return 0;
+    return 0;
 }
