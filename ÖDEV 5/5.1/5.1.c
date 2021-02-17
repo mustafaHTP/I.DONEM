@@ -2,289 +2,279 @@
  * 
  * odev5.1
  *
- *  Mustafa Hatipoðlu
+ *  Mustafa Hatipoï¿½lu
  * 
  */
 
-#include <locale.h> //Türkçe karakterleri kullanmak için bu kütüphaneyi ekliyoruz bunu kullanmak için Dokuman ==> Kodlama ayarla ==> GD & GB ASYA ==> Türkçe (Windows-1254) seçiyoruz
+#include <locale.h> //Tï¿½rkï¿½e karakterleri kullanmak iï¿½in bu kï¿½tï¿½phaneyi ekliyoruz bunu kullanmak iï¿½in Dokuman ==> Kodlama ayarla ==> GD & GB ASYA ==> Tï¿½rkï¿½e (Windows-1254) seï¿½iyoruz
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h> //srand fonksiyonunu kullanmak için bu kütüphaneyi ekliyoruz
-#include <string.h> //strlen fonksiyonunu kullanmak için bu kütüphaneyi ekliyoruz
+#include <time.h> //srand fonksiyonunu kullanmak iï¿½in bu kï¿½tï¿½phaneyi ekliyoruz
+#include <string.h> //strlen fonksiyonunu kullanmak iï¿½in bu kï¿½tï¿½phaneyi ekliyoruz
 
-char words [10][11] = {"PORTAKAL","ELMA","ARMUT","ADALET","KASA","SARAY","JAGUAR","ZEBRA","KAPLAN","BASKETBOL"}; //global iki boyutlu bir dizi atýyoruz
-
-
-				//FONKSÝYONLAR
+char words [10][11] = {"PORTAKAL","ELMA","ARMUT","ADALET","KASA","SARAY","JAGUAR","ZEBRA","KAPLAN","BASKETBOL"}; //global iki boyutlu bir dizi atï¿½yoruz
 
 
-int boolvarmi (char x , int y){  //Bu fonksiyon parametre olarak kullanýcýn girdiði karakteri ve kelimenin dizide hangi satýrda olduðunu belirten bir sayý alýr
-	                             //Eðer kullanýcýnýn girdiði karakter dizide varsa 1 yoksa 0 döndürür             
-		for(int i=0;i<10;i++){
-					
-			if(x==words[y][i])
-			    return 1;
-			                 }		   
-		   
-	   return 0;
-	
-	
-	}
-
-void achievement (int s,int h ,int n){ //Bu fonksiyon kullanýcýnýn doðru tahmin ettiði harf sayýsýný kelimenin uzunluðuyla karþýlaþtýrýr yani kullanýcý caný ile
-									   //Eðer doðru bilinen harf sayýsý kelimenin harf sayýsý kadarsa "TEBRÝKLER BAÞARDINIZ" ve tahmin edilen kelimeyi ekrana basar 
-	if(s==h){
-	printf("\nTEBRÝKLER BAÞARDINIZ\n");
-	
-	
-	printf("KELÝMENÝZ: ");
-	for(int j=0;j<=h-1;j++)	
-	    printf("%c",words[n][j]);
-	     	}
-	
-	}
+                //FONKSIYONLAR
 
 
-void failure (int s,int h){ //Bu fonksiyon eðer doðru tahmin edilen harf sayýsý ile kelimenin harf sayýsý eþit deðilse "BAÞARAMADINIZ :( " bastýrýr
-	
-	if(s!=h)
-	   printf("\nBAÞARAMADINIZ :( ");
+int boolvarmi (char x , int y){  //Bu fonksiyon parametre olarak kullanï¿½cï¿½n girdiï¿½i karakteri ve kelimenin dizide hangi satï¿½rda olduï¿½unu belirten bir sayï¿½ alï¿½r
+                                 //Eï¿½er kullanï¿½cï¿½nï¿½n girdiï¿½i karakter dizide varsa 1 yoksa 0 dï¿½ndï¿½rï¿½r             
+        for(int i=0;i<10;i++){
+                    
+            if(x==words[y][i])
+                return 1;
+                             }		   
+           
+       return 0;
+    }
 
-	}
+void achievement (int s,int h ,int n){ //Bu fonksiyon kullanï¿½cï¿½nï¿½n doï¿½ru tahmin ettiï¿½i harf sayï¿½sï¿½nï¿½ kelimenin uzunluï¿½uyla karï¿½ï¿½laï¿½tï¿½rï¿½r yani kullanï¿½cï¿½ canï¿½ ile
+                                       //Eï¿½er doï¿½ru bilinen harf sayï¿½sï¿½ kelimenin harf sayï¿½sï¿½ kadarsa "TEBRï¿½KLER BAï¿½ARDINIZ" ve tahmin edilen kelimeyi ekrana basar 
+    if(s==h){
+    printf("\nTEBRï¿½KLER BAï¿½ARDINIZ\n");
+    
+    
+    printf("KELï¿½MENï¿½Z: ");
+    for(int j=0;j<=h-1;j++)	
+        printf("%c",words[n][j]);
+             }
+    
+    }
 
 
-void hangman (int f ) {     //Bu fonksiyon kullanýcýn yanlýþ tahmin edilen her harf sayýsýna oranla aþama aþama adam asar
-	
-	
-	switch (f){ //Hata sayýsýna göre adam asar
-	
-	
-	   
-	case 0:      
-	printf("|-------|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	break;         
-	
-	case 1:        
-	printf("|-------|\n");
-	printf("|       0\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	break;	    
-	
-	
-	case 2:      
-	printf("|-------|	\n");
-	printf("|       0	\n");
-	printf("|       |	\n");
-	printf("|       |	\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	break;	   
-	
-	case 3:     
-	printf("|-------|	\n");
-	printf("|       0	\n");
-	printf("|      /|	\n");
-	printf("|       |	\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	break;        
-	
-	case 4:       
-	printf("|-------|	\n");
-	printf("|       0	\n");
-	printf("|      /|	\n");
-	printf("|     / |	\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	break;	    
-	
-	case 5:        
-	printf("|-------|	\n");
-	printf("|       0	\n");
-	printf("|      /|\\	\n");
-	printf("|     / |	\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	break;	   
-	
-	
-	case 6:
-	printf("|-------|	\n");
-	printf("|       0	\n");
-	printf("|      /|\\	\n");
-	printf("|     / | \\	\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	break;	    
-	
-	
-	case 7: 
-	printf("|-------|	\n");
-	printf("|       0	\n");
-	printf("|      /|\\	\n");
-	printf("|     / | \\	\n");
-	printf("|        \\	\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	break;	   
-	
-	case 8:        
-	printf("|-------|   \n");
-	printf("|       0	\n");
-	printf("|      /|\\	\n");
-	printf("|     / | \\	\n");
-	printf("|      / \\	\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	break;	   
-	
-	case 9:		
-	printf("|-------|      \n");
-	printf("|       0     \n");
-	printf("|      /|\\    \n");
-	printf("|     / | \\    \n");
-	printf("|      / \\     \n");
-	printf("|     /        \n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	break;	
-	
-	
-	case 10:            
-	printf("|-------|  \n");
-	printf("|       0    \n");
-	printf("|      /|\\  \n");
-	printf("|     / | \\  \n");
-	printf("|      / \\   \n");
-	printf("|     /   \\   \n");
-	printf("|\n");
-	printf("|\n");
-	printf("|\n");
-	break;		
-	
-	
+void failure (int s,int h){ //Bu fonksiyon eï¿½er doï¿½ru tahmin edilen harf sayï¿½sï¿½ ile kelimenin harf sayï¿½sï¿½ eï¿½it deï¿½ilse "BAï¿½ARAMADINIZ :( " bastï¿½rï¿½r
+    
+    if(s!=h)
+       printf("\nBAï¿½ARAMADINIZ :( ");
+
+    }
+
+
+void hangman (int f ) {     //Bu fonksiyon kullanï¿½cï¿½n yanlï¿½ï¿½ tahmin edilen her harf sayï¿½sï¿½na oranla aï¿½ama aï¿½ama adam asar
+    
+    
+    switch (f){ //Hata sayï¿½sï¿½na gï¿½re adam asar
+    
+    
+       
+    case 0:      
+    printf("|-------|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    break;         
+    
+    case 1:        
+    printf("|-------|\n");
+    printf("|       0\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    break;	    
+    
+    
+    case 2:      
+    printf("|-------|	\n");
+    printf("|       0	\n");
+    printf("|       |	\n");
+    printf("|       |	\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    break;	   
+    
+    case 3:     
+    printf("|-------|	\n");
+    printf("|       0	\n");
+    printf("|      /|	\n");
+    printf("|       |	\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    break;        
+    
+    case 4:       
+    printf("|-------|	\n");
+    printf("|       0	\n");
+    printf("|      /|	\n");
+    printf("|     / |	\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    break;	    
+    
+    case 5:        
+    printf("|-------|	\n");
+    printf("|       0	\n");
+    printf("|      /|\\	\n");
+    printf("|     / |	\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    break;	   
+    
+    
+    case 6:
+    printf("|-------|	\n");
+    printf("|       0	\n");
+    printf("|      /|\\	\n");
+    printf("|     / | \\	\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    break;	    
+    
+    
+    case 7: 
+    printf("|-------|	\n");
+    printf("|       0	\n");
+    printf("|      /|\\	\n");
+    printf("|     / | \\	\n");
+    printf("|        \\	\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    break;	   
+    
+    case 8:        
+    printf("|-------|   \n");
+    printf("|       0	\n");
+    printf("|      /|\\	\n");
+    printf("|     / | \\	\n");
+    printf("|      / \\	\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    break;	   
+    
+    case 9:		
+    printf("|-------|      \n");
+    printf("|       0     \n");
+    printf("|      /|\\    \n");
+    printf("|     / | \\    \n");
+    printf("|      / \\     \n");
+    printf("|     /        \n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    break;	
+    
+    
+    case 10:            
+    printf("|-------|  \n");
+    printf("|       0    \n");
+    printf("|      /|\\  \n");
+    printf("|     / | \\  \n");
+    printf("|      / \\   \n");
+    printf("|     /   \\   \n");
+    printf("|\n");
+    printf("|\n");
+    printf("|\n");
+    break;		
+    
+    
                        }
-	
-		
-		
-		}			
-				
+    
+        
+        
+        }			
+                
 
-         //ANA FONKSÝYON
+         //ANA FONKSï¿½YON
 
 
 
 int main()
 {
-	
-	setlocale(LC_ALL,"Turkish"); //Türkçe karakter için ayarlama yapýyoruz 
-	
-	srand(time(NULL)); //Bilgisayarýn saatine göre rastgele bir sayý üretir
-	
-	int wordnumber = rand()%10; //Üretilen rastgele sayýyý 0-9 arasýnda sýnýrlýyoruz ve kelimenin hangi satýrda olduðunu belirleyecek deðiþkene atýyoruz
-	int life = strlen(words[wordnumber]); //Satýr sayýsýna göre o satýrdaki metin uzunluðunu bulup bunu kullanýcý caný olarak atýyoruz
-	char guess[11] = {'_','_','_','_','_','_','_','_','_','_','_'}; //Kullanýcýn tahminleri eðer doðru ise bu diziye atanacaktýr
-	char guessletter; //Tahmin edilecek harf için deðiþken tanýmlýyoruz
-	int success=0;  //Kullanýcýnýn doðru tahmin sayýsý bu deðiþkende tutulacak
-	int fail=0; // Kullanýcýnýn hata sayýsý bu deðiþkende tutulacak
-	int j,i;
-	int failcontrol=0;	//Hata sayýsýný kontrol etmek için bir deðiþken
-	
+    
+    setlocale(LC_ALL,"Turkish"); //Tï¿½rkï¿½e karakter iï¿½in ayarlama yapï¿½yoruz 
+    
+    srand(time(NULL)); //Bilgisayarï¿½n saatine gï¿½re rastgele bir sayï¿½ ï¿½retir
+    
+    int wordnumber = rand()%10; //ï¿½retilen rastgele sayï¿½yï¿½ 0-9 arasï¿½nda sï¿½nï¿½rlï¿½yoruz ve kelimenin hangi satï¿½rda olduï¿½unu belirleyecek deï¿½iï¿½kene atï¿½yoruz
+    int life = strlen(words[wordnumber]); //Satï¿½r sayï¿½sï¿½na gï¿½re o satï¿½rdaki metin uzunluï¿½unu bulup bunu kullanï¿½cï¿½ canï¿½ olarak atï¿½yoruz
+    char guess[11] = {'_','_','_','_','_','_','_','_','_','_','_'}; //Kullanï¿½cï¿½n tahminleri eï¿½er doï¿½ru ise bu diziye atanacaktï¿½r
+    char guessletter; //Tahmin edilecek harf iï¿½in deï¿½iï¿½ken tanï¿½mlï¿½yoruz
+    int success=0;  //Kullanï¿½cï¿½nï¿½n doï¿½ru tahmin sayï¿½sï¿½ bu deï¿½iï¿½kende tutulacak
+    int fail=0; // Kullanï¿½cï¿½nï¿½n hata sayï¿½sï¿½ bu deï¿½iï¿½kende tutulacak
+    int j,i;
+    int failcontrol=0;	//Hata sayï¿½sï¿½nï¿½ kontrol etmek iï¿½in bir deï¿½iï¿½ken
+    
 
-	
-	
-	printf("!!!Oyunda Buyuk harf kullanýnýz");
-	printf("\n                     ADAM ASMACA OYUNU BAÞLAMIÞTIR...");	
-	printf("\n\n\n");
-	
-	hangman(fail);
-	for(int z=0;z<=life-1;z++)  //kelimenin harf sayýsý kadar boþluk bastýrýyoruz
+    
+    
+    printf("!!!Oyunda Buyuk harf kullanï¿½nï¿½z");
+    printf("\n                     ADAM ASMACA OYUNU BAï¿½LAMIï¿½TIR...");	
+    printf("\n\n\n");
+    
+    hangman(fail);
+    for(int z=0;z<=life-1;z++)  //kelimenin harf sayï¿½sï¿½ kadar boï¿½luk bastï¿½rï¿½yoruz
         printf(" _ ");	
-	
-	printf("\n");
-	
-	
-	for(i=1;i<=life;i++){  //Kullanýcýn kelimenin harf sayýsý kadar caný vardýr
-	      
-	      printf("\nLütfen Bir Harf Giriniz: ");
-	      scanf(" %c",&guessletter);
-	       
-	          for(j=0;j<=life-1;j++){  //Kullanýcýdan alýnan harfi dizide arýyoruz
-				  
-				  if(guessletter==words[wordnumber][j]){ //Eðer harf dizide varsa tahmin dizisine doðru karakteri atýyoruz
-				     guess[j] = guessletter;
-				     success++;   //Tahmin edilen harf doðru ise 1 artýyoruz                               				                        						  
-					 failcontrol++; 		           }  // Eðer kullanýcý doðru girdiyse bu deðiþkeni bir artýrýyoruz çünkü for dan çýktýktan sonra fail sayýsýný artýrmasýn diye
-				  			                  		                     			                    
-				                     }
+    
+    printf("\n");
+    
+    
+    for(i=1;i<=life;i++){  //Kullanï¿½cï¿½n kelimenin harf sayï¿½sï¿½ kadar canï¿½ vardï¿½r
+          
+        printf("\nLï¿½tfen Bir Harf Giriniz: ");
+        scanf(" %c",&guessletter);
+           
+        for(j=0;j<=life-1;j++){  //Kullanï¿½cï¿½dan alï¿½nan harfi dizide arï¿½yoruz
+                  
+            if(guessletter==words[wordnumber][j]){ //Eï¿½er harf dizide varsa tahmin dizisine doï¿½ru karakteri atï¿½yoruz
+                guess[j] = guessletter;
+                success++;   //Tahmin edilen harf doï¿½ru ise 1 artï¿½yoruz                               				                        						  
+                failcontrol++; 		           }  // Eï¿½er kullanï¿½cï¿½ doï¿½ru girdiyse bu deï¿½iï¿½keni bir artï¿½rï¿½yoruz ï¿½ï¿½nkï¿½ for dan ï¿½ï¿½ktï¿½ktan sonra fail sayï¿½sï¿½nï¿½ artï¿½rmasï¿½n diye
+                                                                                                             
+        }
               
-                   if (failcontrol==0) 
-				       fail++;              
+        if (failcontrol==0) 
+            fail++;              
                                          
-                    system("cls"); 
-                    hangman(fail);
-                    printf("\n\n");
-                    printf("%d",boolvarmi(guessletter,wordnumber)); //Burada kullanýcýdan alýnan deðeri fonksiyona yolluyoruz tahmin doðru ise 1 , yanlýþ ise 0 döndürür
-                
-                    printf("\n\n");
-	                          
-	                          
-	                           for(int q=0;q<=life-1;q++)   //Kullanýcýn o andaki doðru tahminlerinin yerlerini görmesi için guess dizisini tahimn edilen harf sayýsý kadar bastýyoruz
-                                   printf("%c",guess[q]);
-				               
-				               
-				               printf("\n\n");
-                               failcontrol=0;    //Her tahminden sonra bu deðiþkeni sýfýrlýyoruz
+        system("cls"); 
+        hangman(fail);
+        printf("\n\n");
+        printf("%d",boolvarmi(guessletter,wordnumber)); //Burada kullanï¿½cï¿½dan alï¿½nan deï¿½eri fonksiyona yolluyoruz tahmin doï¿½ru ise 1 , yanlï¿½ï¿½ ise 0 dï¿½ndï¿½rï¿½r
+    
+        printf("\n\n");
+                                                      
+        for(int q=0;q<=life-1;q++)   //Kullanï¿½cï¿½n o andaki doï¿½ru tahminlerinin yerlerini gï¿½rmesi iï¿½in guess dizisini tahimn edilen harf sayï¿½sï¿½ kadar bastï¿½yoruz
+            printf("%c",guess[q]);
+                               
+                               
+        printf("\n\n");
+        failcontrol=0;    //Her tahminden sonra bu deï¿½iï¿½keni sï¿½fï¿½rlï¿½yoruz
                                    
                                     
-                                       }
-                         
-                      
-                 
-                  printf("\n\n");                  
-                  failure (success,life); //Son olarak baþarý sayýlarýný fonksiyonlara gönderip doðru mu , yanlýþ mý tahmin edildiðini ekrana bastýrýyoruz
-                  achievement (success,life,wordnumber);       
-	              printf("\n\n");   
-	               
-	           
-	             
-	 	
-	
-	
-	return 0;
+    }
+                                     
+    printf("\n\n");                  
+    failure (success,life); //Son olarak baï¿½arï¿½ sayï¿½larï¿½nï¿½ fonksiyonlara gï¿½nderip doï¿½ru mu , yanlï¿½ï¿½ mï¿½ tahmin edildiï¿½ini ekrana bastï¿½rï¿½yoruz
+    achievement (success,life,wordnumber);       
+    printf("\n\n");   
+                   
+    return 0;
 }
 
